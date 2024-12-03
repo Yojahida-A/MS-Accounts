@@ -1,0 +1,59 @@
+openapi: "3.0.0"
+info:
+  version: 1.0.0
+  title: ¡ApiCustomer!
+servers:
+  - url: http://localhost:8085
+paths:
+  /customers:
+    get:
+      summary: Registro Clientes
+      operationId: clientes
+      tags:
+        - customers
+      responses:
+        '200':
+          description: Consulta de clientes
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ApiCustomersResponse"
+components:
+  schemas:
+    CustomerRequest:
+      type: object
+      properties:
+        id:
+          type: string
+          description: ID único de cliente
+        type:
+          firstName: string
+          description: Nombre de cliente
+        lastName:
+          type: String
+          description: apellidos del cliente
+        dni:
+          type: String
+          description: DNI de cliente
+        email:
+          type: String
+          description: correo electrónico de cliente
+
+    CustomerResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          description: ID único de cliente
+        type:
+          firstName: string
+          description: Nombre de cliente
+        lastName:
+          type: String
+          description: apellidos del cliente
+        dni:
+          type: String
+          description: DNI de cliente
+        email:
+          type: String
+          description: correo electrónico de cliente
