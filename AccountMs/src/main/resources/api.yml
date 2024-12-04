@@ -3,57 +3,57 @@ info:
   version: 1.0.0
   title: ¡ApiCustomer!
 servers:
-  - url: http://localhost:8085
+  - url: http://localhost:8080
 paths:
   /customers:
     get:
-      summary: Registro Clientes
-      operationId: clientes
+      summary: Registro cuentas
+      operationId: cuentas
       tags:
-        - customers
+        - accounts
       responses:
         '200':
-          description: Consulta de clientes
+          description: Consulta de cuentas
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/ApiCustomersResponse"
+                $ref: "#/components/schemas/AccountsResponse"
 components:
   schemas:
-    CustomerRequest:
+    AccountRequest:
       type: object
       properties:
         id:
-          type: string
-          description: ID único de cliente
+          type: Long
+          description: ID único de cuenta
         type:
-          firstName: string
-          description: Nombre de cliente
-        lastName:
-          type: String
-          description: apellidos del cliente
-        dni:
-          type: String
-          description: DNI de cliente
-        email:
-          type: String
-          description: correo electrónico de cliente
+          accountNumber: String
+          description: Número de la cuenta
+        balance:
+          type: Double
+          description: saldo en la cuenta
+        accountType:
+          type: AccountType
+          description: Tipo de cuenta
+        customerId:
+          type: Long
+          description: ID de cliente
 
     CustomerResponse:
       type: object
       properties:
         id:
-          type: string
-          description: ID único de cliente
+          type: Long
+          description: ID único de cuenta
         type:
-          firstName: string
-          description: Nombre de cliente
-        lastName:
-          type: String
-          description: apellidos del cliente
-        dni:
-          type: String
-          description: DNI de cliente
-        email:
-          type: String
-          description: correo electrónico de cliente
+          accountNumber: String
+          description: Número de la cuenta
+        balance:
+          type: Double
+          description: saldo en la cuenta
+        accountType:
+          type: AccountType
+          description: Tipo de cuenta
+        customerId:
+          type: Long
+          description: ID de cliente
