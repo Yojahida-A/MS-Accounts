@@ -1,0 +1,446 @@
+{
+	"info": {
+		"_postman_id": "cd7cbc83-a505-487e-b4ca-0ee3e143acf9",
+		"name": "Banco",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39751857",
+		"_collection_link": "https://ninguno-8347.postman.co/workspace/ninguno-Workspace~ffe840d9-5104-41fa-bc44-5bc23ce8b206/collection/39751857-cd7cbc83-a505-487e-b4ca-0ee3e143acf9?action=share&source=collection_link&creator=39751857"
+	},
+	"item": [
+		{
+			"name": "API Customer",
+			"item": [
+				{
+					"name": "GET Customer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/customers",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Cliente By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/customers/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"customers",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST  Customer(ALTA)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\":\"Mariela\",\r\n    \"lastName\":\"Gonzáles\",\r\n    \"dni\":\"23205689\",\r\n    \"email\":\"mariela14@gmail.com\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/customers",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT Customer(modification)",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"firstName\": \"Yojahida\",\r\n    \"lastName\":\"Arroyo Gómez\",\r\n    \"dni\":\"45293103\",\r\n    \"email\":\"yojahida.monica1@hotmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/customers/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"customers",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Customer By ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/customers/10",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"customers",
+								"10"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "API Accounts",
+			"item": [
+				{
+					"name": "GET Accounts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/accounts",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"accounts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/accounts/4",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"accounts",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST Account(ALTA)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"accountNumber\": \"1000899\",\r\n        \"balance\": 2500.0,\r\n        \"accountType\": \"SAVINGS\",\r\n        \"customerId\": 3\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/accounts",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"accounts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT Account (depositar)",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n       \r\n       \r\n        \"amount\": 800.0\r\n        \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/accounts/1/withdraw?amount=800",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"accounts",
+								"1",
+								"withdraw"
+							],
+							"query": [
+								{
+									"key": "amount",
+									"value": "800"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT Account (retirar)",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "amount",
+									"value": "1000",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/accounts/1/withdraw",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"accounts",
+								"1",
+								"withdraw"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE Acount  by Id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/accounts/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"accounts",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "API Transactions",
+			"item": [
+				{
+					"name": "API Account",
+					"item": [
+						{
+							"name": "GET Account",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"accountNumber\":\"1000501\",\r\n    \"balance\":2000\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8085/accounts",
+									"host": [
+										"localhost"
+									],
+									"port": "8085",
+									"path": [
+										"accounts"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "POST Account",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"accountNumber\":\"250\",\r\n    \"balance\":150\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8085/accounts",
+									"host": [
+										"localhost"
+									],
+									"port": "8085",
+									"path": [
+										"accounts"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "GET Transactions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8085/transactions",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"transactions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deposit",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\":\"Deposit\",\r\n    \"amount\":300,\r\n    \"date\": \"2024-11-20T15:10:35\",\r\n    \"sourceAccount\": \"1000507\",\r\n    \"destinationAccount\": null\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8085/transactions/deposit",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"transactions",
+								"deposit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "withdrawal",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\":\"Withdrawal\",\r\n    \"amount\":120,\r\n    \"date\": \"2024-11-20T15:05:01\",\r\n    \"sourceAccount\": \"1000501\",\r\n    \"destinationAccount\": null\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8085/transactions/withdrawal",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"transactions",
+								"withdrawal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Transfer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\":\"Transfer\",\r\n    \"amount\":150,\r\n    \"date\": \"2024-11-20T15:41:24\",\r\n    \"sourceAccount\": \"1000504\",\r\n    \"destinationAccount\": \"1000501\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8085/transactions/transfer",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"transactions",
+								"transfer"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
